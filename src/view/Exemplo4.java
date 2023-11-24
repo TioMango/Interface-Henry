@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Geral
@@ -116,7 +118,17 @@ public class Exemplo4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarActionPerformed
-        // TODO add your handling code here:
+        String selecao = "Selecionados:" ;
+        if(jCheckBoxIngles.isSelected()) {
+            selecao+= "\n"+jCheckBoxIngles.getText();
+        }
+        if(jCheckBoxInformática.isSelected()) {
+            selecao+= "\n"+jCheckBoxInformática.getText();
+        }
+        if((!jCheckBoxIngles.isSelected())&&(!jCheckBoxInformática.isSelected())) {
+            JOptionPane.showMessageDialog(null, "Nenhum curso selecionado!!!");
+    }else
+        JOptionPane.showMessageDialog(null, selecao);
     }//GEN-LAST:event_jButtonVerificarActionPerformed
 
     private void jButtonDesmarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesmarcarActionPerformed
